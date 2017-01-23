@@ -13,3 +13,12 @@ go getでgithubなどに公開されているパッケージを使用する場�
     echo 'export PATH=$PATH:$GOPATH/bin' >> ~/.bashrc
 
 上記コマンドを実行後terminalを再起動する。
+
+# vimでのgo開発環境整備
+vim-pluginでfatih/vim-goというpluginを導入する。
+.vimrcに「Plug 'fatih/vim-go'」を記述しインストールする。
+インストールが完了したらvim-goの各種ツールをインストールするため、vimコマンドで下記を入力
+
+    :GoInstallBinaries
+
+neocompleteを使用する場合はlua入りのvimが必要になってくるので注意

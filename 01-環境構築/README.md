@@ -10,5 +10,6 @@ go getでgithubなどに公開されているパッケージを使用する場�
 
     mkdir ~/.go
     echo 'export GOPATH=$HOME/.go' >> ~/.bashrc
+    echo 'export PATH=$PATH:$GOPATH/bin' >> ~/.bashrc
 
 上記コマンドを実行後terminalを再起動する。

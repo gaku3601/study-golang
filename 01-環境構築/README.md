@@ -14,6 +14,13 @@ go getでgithubなどに公開されているパッケージを使用する場�
 
 上記コマンドを実行後terminalを再起動する。
 
+# vscodeでのgo開発環境
+下記サイト参考  
+macの場合証明書発行が必要になってくるので注意  
+http://dev.classmethod.jp/go/visual-studio-code-golang-debug/  
+https://github.com/derekparker/delve/blob/master/Documentation/installation/osx/install.md  
+
+
 # vimでのgo開発環境整備
 vim-pluginでfatih/vim-goというpluginを導入する。
 .vimrcに「Plug 'fatih/vim-go'」を記述しインストールする。

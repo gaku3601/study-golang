@@ -22,6 +22,10 @@ http://qiita.com/qube81/items/8d4a766280c25d0ef16c
     INSERT INTO jojo VALUES (3,3, '{ "title": "スターダストクルセイダース", "character": { "hero": "空条承太郎" } }');
 
 これでデータの準備は整いましたので、postgresコンテナからexitでログアウトします。  
+go getでpostgreSQLのドライバを取得します。  
+
+    go get github.com/lib/pq
+
 最後にgoフォルダに移動し、実行コマンドを入力し、DBに格納されたデータが表示されることを確認しました。
 
     go run DBconnect.go

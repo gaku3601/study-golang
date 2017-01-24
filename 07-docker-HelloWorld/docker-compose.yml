@@ -1,0 +1,7 @@
+version: '2'
+
+services:
+  go:
+    build: go
+    ports:
+      - 8080:8080

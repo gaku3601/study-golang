@@ -5,14 +5,19 @@ macの場合brewが入っている場合、下記コマンド一発で導入可�
 
 すごく簡単。。。
 
-# goでのパッケージ管理設定
-go getでgithubなどに公開されているパッケージを使用する場合、専用フォルダを作成しpathを通しておく必要がある。
+# GOPATHの設定
+go getでgithubなどに公開されているパッケージを使用する場合、専用フォルダを作成しpathを通しておく必要がある。  
+また作成するプログラムもGOPATH配下で作成する必要がある。  
+そのため、下記コマンドでGOPATHの設定を行っておく
 
     mkdir ~/.go
-    echo 'export GOPATH=$HOME/.go' >> ~/.bashrc
+    echo 'export GOPATH=$HOME/.go:$HOME/Documents/develop/projects/go' >> ~/.bashrc
     echo 'export PATH=$PATH:$GOPATH/bin' >> ~/.bashrc
 
-上記コマンドを実行後terminalを再起動する。
+上記コマンドを実行後terminalを再起動する。  
+## 解説
+go getコマンドで取得したパッケージは$HOME/.goフォルダへ格納される。  
+goプログラムを作成する場所を$HOME/Documents/develop/projects/goとし、フォルダ分けを行っている。  
 
 # vscodeでのgo開発環境
 下記サイト参考  

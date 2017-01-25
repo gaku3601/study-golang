@@ -2,7 +2,7 @@ package main
 
 import (
 	"fmt"
-	"11-Test/add"
+	"./add"
 )
 
 func main() {

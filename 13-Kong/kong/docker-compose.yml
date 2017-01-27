@@ -1,0 +1,43 @@
+version: '2'
+
+services:
+  kong-database:
+    container_name: kong-database
+    image: cassandra:2.2
+    networks:
+      mynet1:
+        ipv4_address: 192.168.1.2
+  kong:
+    container_name: kong
+    image: kong
+    restart: always
+    links:
+      - kong-database:kong-database
+      - go:go
+    environment:
+      - KONG_DATABASE=cassandra
+      - KONG_CASSANDRA_CONTACT_POINTS=kong-database
+      - KONG_PG_HOST=kong-database
+    ports:
+      - 8000:8000
+      - 8443:8443
+      - 8001:8001
+      - 7946:7946
+      - 7946:7946/udp
+    networks:
+      mynet1:
+        ipv4_address: 192.168.1.3
+  go:
+    container_name: goApi
+    build: go
+    networks:
+      mynet1:
+        ipv4_address: 192.168.1.4
+networks:
+  mynet1:
+    driver: bridge
+    ipam:
+      config:
+      - subnet: 192.168.1.0/24
+        gateway: 192.168.1.1
+
